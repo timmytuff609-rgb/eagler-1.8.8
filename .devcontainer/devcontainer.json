@@ -1,0 +1,5 @@
+{
+  "name": "eagler-1.8.8",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "postStartCommand": "python3 .devcontainer/auto_push.py"
+}
