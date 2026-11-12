@@ -8,9 +8,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent.parent
-QUIET_PERIOD_SECONDS = 30
-POLL_INTERVAL_SECONDS = 2
-RETRY_INTERVAL_SECONDS = 30
+QUIET_PERIOD_SECONDS = 1
+POLL_INTERVAL_SECONDS = 1
+RETRY_INTERVAL_SECONDS = 1
 COMMIT_MESSAGE = "Automated update"
 
 
@@ -59,7 +59,10 @@ def watch(repo):
 
     last_change = time.monotonic() if previous_status else None
     if previous_status:
-        log("Pending changes found; committing after 30 seconds without changes.")
+        log(
+            "Pending changes found; committing after "
+            f"{QUIET_PERIOD_SECONDS} second without changes."
+        )
     log(f"Watching {repo} for file changes.")
 
     pending_push = None
