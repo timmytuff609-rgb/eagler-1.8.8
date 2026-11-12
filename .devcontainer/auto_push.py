@@ -18,9 +18,9 @@ class GitCommandError(Exception):
     pass
 
 
-def git(*args):
+def git(repo, *args):
     result = subprocess.run(
-        ["git", "-C", str(ROOT), *args],
+        ["git", "-C", str(repo), *args],
         capture_output=True,
         text=True,
         errors="replace",
@@ -31,8 +31,9 @@ def git(*args):
     return result.stdout.strip()
 
 
-def current_status():
+def current_status(repo):
     return git(
+        repo,
         "status",
         "--porcelain=v1",
         "--untracked-files=all",
@@ -45,13 +46,13 @@ def log(message):
     print(f"[{timestamp} UTC] {message}", flush=True)
 
 
-def push_commit(branch, commit):
-    git("push", "origin", f"{commit}:refs/heads/{branch}")
+def push_commit(repo, branch, commit):
+    git(repo, "push", "origin", f"{commit}:refs/heads/{branch}")
 
 
-def watch():
+def watch(repo):
     try:
-        previous_status = current_status()
+        previous_status = current_status(repo)
     except GitCommandError as error:
         log(str(error))
         return 1
@@ -59,7 +60,7 @@ def watch():
     last_change = time.monotonic() if previous_status else None
     if previous_status:
         log("Pending changes found; committing after 30 seconds without changes.")
-    log("Watching the main repository for file changes.")
+    log(f"Watching {repo} for file changes.")
 
     pending_push = None
     next_push_retry = 0
@@ -69,7 +70,7 @@ def watch():
         now = time.monotonic()
 
         try:
-            status = current_status()
+            status = current_status(repo)
         except GitCommandError as error:
             log(str(error))
             continue
@@ -83,18 +84,18 @@ def watch():
         if status and last_change is not None and now - last_change >= QUIET_PERIOD_SECONDS:
             last_change = now
             try:
-                branch = git("branch", "--show-current")
+                branch = git(repo, "branch", "--show-current")
                 if not branch:
                     log("Cannot auto-commit while HEAD is detached.")
                     continue
-                git("add", "--all")
-                if not current_status():
+                git(repo, "add", "--all")
+                if not current_status(repo):
                     continue
-                git("commit", "-m", COMMIT_MESSAGE)
-                commit = git("rev-parse", "HEAD")
+                git(repo, "commit", "-m", COMMIT_MESSAGE)
+                commit = git(repo, "rev-parse", "HEAD")
                 pending_push = (branch, commit)
                 next_push_retry = 0
-                previous_status = current_status()
+                previous_status = current_status(repo)
                 last_change = time.monotonic() if previous_status else None
                 log(f"Committed {commit[:12]} on {branch}.")
             except GitCommandError as error:
@@ -103,7 +104,7 @@ def watch():
         if pending_push is not None and now >= next_push_retry:
             branch, commit = pending_push
             try:
-                push_commit(branch, commit)
+                push_commit(repo, branch, commit)
                 log(f"Pushed {commit[:12]} to origin/{branch}.")
                 pending_push = None
             except GitCommandError as error:
@@ -111,12 +112,18 @@ def watch():
                 next_push_retry = now + RETRY_INTERVAL_SECONDS
 
 
-def start_background():
-    git_dir = Path(git("rev-parse", "--absolute-git-dir"))
+def start_background(repo):
+    git_dir = Path(git(repo, "rev-parse", "--absolute-git-dir"))
     log_path = git_dir / "codespaces-auto-push.log"
     with log_path.open("a", encoding="utf-8") as output:
         process = subprocess.Popen(
-            [sys.executable, str(Path(__file__).resolve()), "--foreground"],
+            [
+                sys.executable,
+                str(Path(__file__).resolve()),
+                "--repo",
+                str(repo),
+                "--foreground",
+            ],
             cwd=ROOT,
             stdin=subprocess.DEVNULL,
             stdout=output,
@@ -127,29 +134,40 @@ def start_background():
     print(f"Auto-push watcher started (pid {process.pid}); log: {log_path}")
 
 
-def run_foreground():
-    git_dir = Path(git("rev-parse", "--absolute-git-dir"))
+def run_foreground(repo):
+    git_dir = Path(git(repo, "rev-parse", "--absolute-git-dir"))
     with (git_dir / "codespaces-auto-push.lock").open("a", encoding="utf-8") as lock:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             log("Auto-push watcher is already running.")
             return 0
-        return watch()
+        return watch(repo)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Commit and push quiet-period changes.")
+    parser.add_argument(
+        "--repo",
+        type=Path,
+        default=ROOT,
+        help="repository to watch (defaults to the main repository)",
+    )
     parser.add_argument(
         "--foreground",
         action="store_true",
         help="run the watcher in the current process",
     )
     args = parser.parse_args()
-    if args.foreground:
-        return run_foreground()
     try:
-        start_background()
+        repo = Path(git(args.repo, "rev-parse", "--show-toplevel"))
+    except GitCommandError as error:
+        print(error, file=sys.stderr)
+        return 1
+    if args.foreground:
+        return run_foreground(repo)
+    try:
+        start_background(repo)
     except GitCommandError as error:
         print(error, file=sys.stderr)
         return 1
