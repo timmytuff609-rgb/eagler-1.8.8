@@ -1,13 +1,14 @@
-/cache
+# Keep player-identifying and transient server state out of the repository.
 /logs
-/world
-/world_nether
-/world_the_end
+/world/session.lock
+/world_nether/session.lock
+/world_the_end/session.lock
+/world/advancements
+/world/playerdata
+/world/stats
 /banned-ips.json
 /banned-players.json
-/eula.txt
-/ops.json
 /eagler_skins_cache.db
+/ops.json
 /usercache.json
-/version_history.json
 /whitelist.json
