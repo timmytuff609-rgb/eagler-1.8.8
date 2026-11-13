@@ -22,3 +22,45 @@ Spectator Name: ecn1
 Taken         : []
 Given         : [BOW & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={ARROW_DAMAGE=5, ARROW_FIRE=1, ARROW_INFINITE=1}} x 1, DIAMOND_SWORD & UNSPECIFIC_META:{meta-type=UNSPECIFIC, display-name=Excalibur, enchants={DAMAGE_ALL=5, FIRE_ASPECT=2, DURABILITY=3}, repair-cost=7} x 1, DIAMOND_SWORD & UNSPECIFIC_META:{meta-type=UNSPECIFIC, display-name=Excalibur, enchants={DAMAGE_ALL=5, FIRE_ASPECT=2}, repair-cost=3, Unbreakable=true, internal=H4sIAAAAAAAA/z3MUQqCQBSF4RNJjIIv0Traggi+BGlPLuBmV73ozMh43b9a2OMH5/wJEOOaqwZ5L8ql/0grHOYEwOkMU9ePovSz/hjvfDIdvuTWL25HZpD+KxVZxq1jx0GaO6lSMxRkqeMt8Zo4kIp32wsG0Xcc9TS2wAqLEhqXjgAAAA==} x 1, DIAMOND_LEGGINGS & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={PROTECTION_ENVIRONMENTAL=4, THORNS=3}, repair-cost=3} x 1]
 Target        : V1trum
+[2026-11-13 12:27:07] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : []
+Given         : [DIAMOND_SWORD x 1, DIAMOND_PICKAXE x 1, DIAMOND_CHESTPLATE x 2]
+Target        : Luk4s84
+[2026-11-13 12:29:17] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : []
+Given         : [BED x 1, WORKBENCH x 1, WOOD_PICKAXE x 1, BREAD & UNSPECIFIC_META:{meta-type=UNSPECIFIC, display-name=bagetty, enchants={KNOCKBACK=2}, repair-cost=1} x 1, DIRT x 31, ARROW x 64, BOW & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={ARROW_DAMAGE=1}} x 1, COBBLESTONE x 1]
+Target        : Ajwins
+[2026-11-13 12:36:12] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : []
+Given         : [DIAMOND_PICKAXE x 1, DIRT x 67, STONE x 62, BED x 1, WOOD x 58, STRING x 18, BOW & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={ARROW_DAMAGE=1}} x 1, ARROW x 64, SPIDER_EYE x 1, WOOD_PICKAXE x 1, DIAMOND_CHESTPLATE x 1, DIAMOND_SWORD x 1, COBBLESTONE x 66, WORKBENCH x 1, STICK x 1]
+Target        : Ajwins
+[2026-11-13 12:36:25] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : []
+Given         : [BOW x 1, DIAMOND_PICKAXE x 1, SEEDS x 1, DIAMOND_CHESTPLATE x 1, ARROW x 126]
+Target        : Luk4s84
+[2026-11-13 12:36:25] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : []
+Given         : [BOW x 1, DIAMOND_PICKAXE x 1, SEEDS x 1, DIAMOND_CHESTPLATE x 1, ARROW x 126]
+Target        : Luk4s84
+[2026-11-13 12:51:33] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : [DIAMOND_CHESTPLATE & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={PROTECTION_ENVIRONMENTAL=10000, DURABILITY=10000}} x 1]
+Given         : []
+Target        : luk4s84
+[2026-11-13 12:51:33] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : [DIAMOND_CHESTPLATE & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={PROTECTION_ENVIRONMENTAL=10000, DURABILITY=10000}} x 1]
+Given         : []
+Target        : luk4s84
