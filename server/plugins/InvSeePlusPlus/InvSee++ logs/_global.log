@@ -160,3 +160,9 @@ Spectator Name: ecn1
 Taken         : [BONE x 2, ROTTEN_FLESH x 2]
 Given         : [DIAMOND_HELMET & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={PROTECTION_ENVIRONMENTAL=1000, OXYGEN=1000, WATER_WORKER=1000, THORNS=1000, DURABILITY=1000}, Unbreakable=true} x 1, ARROW & UNSPECIFIC_META:{meta-type=UNSPECIFIC, display-name=§6§lGod Arrow, enchants={DAMAGE_ALL=32767, KNOCKBACK=32767, FIRE_ASPECT=32767, ARROW_DAMAGE=32767, ARROW_KNOCKBACK=32767, ARROW_FIRE=32767, ARROW_INFINITE=32767}} x 60, LAVA_BUCKET x 1]
 Target        : ecn1
+[2026-11-14 20:11:12] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : [BREAD & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={KNOCKBACK=1000}} x 1]
+Given         : []
+Target        : ecn1
