@@ -130,3 +130,9 @@ Spectator Name: ecn1
 Taken         : [DIAMOND_HELMET & UNSPECIFIC_META:{meta-type=UNSPECIFIC, enchants={PROTECTION_ENVIRONMENTAL=1000, OXYGEN=1000, WATER_WORKER=1000, THORNS=1000, DURABILITY=1000}, Unbreakable=true} x 1]
 Given         : []
 Target        : Ajwins
+[2026-11-14 19:50:47] [INFO]:
+Spectator UUID: 554c5c63-e709-3127-a276-8560a3acb368
+Spectator Name: ecn1
+Taken         : []
+Given         : [SEEDS x 3, NETHER_STAR x 3, WOOD_PICKAXE x 1, WOOD x 67, BOAT_BIRCH x 1, LAVA_BUCKET x 1, STICK x 10, TORCH x 3, BONE x 2]
+Target        : Ajwins
