@@ -97,8 +97,8 @@ world-settings:
       hard: 128
     falling-block-height-nerf: 0
     tnt-entity-height-nerf: 0
-    use-vanilla-world-scoreboard-name-coloring: false
     water-over-lava-flow-speed: 5
+    use-vanilla-world-scoreboard-name-coloring: false
     fast-drain:
       lava: false
       water: false
