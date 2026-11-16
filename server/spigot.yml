@@ -15,7 +15,6 @@ settings:
   debug: false
   save-user-cache-on-stop-only: false
   sample-count: 12
-  player-shuffle: 0
   filter-creative-items: true
   user-cache-size: 1000
   int-cache-limit: 1024
@@ -24,6 +23,7 @@ settings:
   item-dirty-ticks: 20
   bungeecord: false
   late-bind: false
+  player-shuffle: 0
   timeout-time: 60
   restart-on-crash: true
   restart-script: ./start.sh
@@ -37,15 +37,15 @@ settings:
       max: 2048.0
 commands:
   tab-complete: 0
-  spam-exclusions:
-  - /skill
-  silent-commandblock-console: false
   replace-commands:
   - setblock
   - summon
   - testforblock
   - tellraw
   log: true
+  spam-exclusions:
+  - /skill
+  silent-commandblock-console: false
 messages:
   whitelist: You are not whitelisted on this server!
   unknown-command: Unknown command. Type "/help" for help.
