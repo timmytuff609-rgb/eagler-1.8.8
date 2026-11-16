@@ -65,6 +65,9 @@ world-settings:
       disable-extreme-hills-emeralds: false
       disable-extreme-hills-monster-eggs: false
       disable-mesa-additional-gold: false
+    fast-drain:
+      lava: false
+      water: false
     portal-search-radius: 128
     queue-light-updates: false
     optimize-explosions: false
@@ -97,11 +100,8 @@ world-settings:
       hard: 128
     falling-block-height-nerf: 0
     tnt-entity-height-nerf: 0
-    use-vanilla-world-scoreboard-name-coloring: false
     water-over-lava-flow-speed: 5
-    fast-drain:
-      lava: false
-      water: false
+    use-vanilla-world-scoreboard-name-coloring: false
     lava-flow-speed:
       normal: 30
       nether: 10
@@ -174,8 +174,8 @@ world-settings:
     spawner-nerfed-mobs-should-jump: false
     baby-zombie-movement-speed: 0.5
     allow-leashing-undead-horse: false
-    mob-spawner-tick-rate: 1
     all-chunks-are-slime-chunks: false
+    mob-spawner-tick-rate: 1
     squid-spawn-height:
       maximum: 0.0
     disable-teleportation-suffocation-check: false
