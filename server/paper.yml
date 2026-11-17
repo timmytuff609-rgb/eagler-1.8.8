@@ -66,7 +66,6 @@ world-settings:
       disable-extreme-hills-monster-eggs: false
       disable-mesa-additional-gold: false
     portal-search-radius: 128
-    use-vanilla-world-scoreboard-name-coloring: false
     queue-light-updates: false
     optimize-explosions: false
     use-chunk-inhabited-timer: true
@@ -102,6 +101,7 @@ world-settings:
     fast-drain:
       lava: false
       water: false
+    use-vanilla-world-scoreboard-name-coloring: false
     lava-flow-speed:
       normal: 30
       nether: 10
@@ -134,11 +134,11 @@ world-settings:
     parrots-are-unaffected-by-player-movement: false
     disable-explosion-knockback: false
     elytra-hit-wall-damage: true
-    non-player-arrow-despawn-rate: -1
     grass-spread-tick-rate: 1
     use-alternate-fallingblock-onGround-detection: false
     bed-search-radius: 1
     prevent-tnt-from-moving-in-water: false
+    non-player-arrow-despawn-rate: -1
     armor-stands-tick: true
     keep-spawn-loaded: true
     anti-xray:
@@ -174,8 +174,8 @@ world-settings:
     spawner-nerfed-mobs-should-jump: false
     baby-zombie-movement-speed: 0.5
     allow-leashing-undead-horse: false
-    mob-spawner-tick-rate: 1
     all-chunks-are-slime-chunks: false
+    mob-spawner-tick-rate: 1
     squid-spawn-height:
       maximum: 0.0
     disable-teleportation-suffocation-check: false
