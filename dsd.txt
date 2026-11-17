@@ -1,1 +1,3 @@
-stop
+cd server
+chmod +x run.sh
+./run.sh
