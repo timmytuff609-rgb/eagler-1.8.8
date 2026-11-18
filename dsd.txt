@@ -1,1 +1,2 @@
 cd server 
+java -Xms512M -Xmx2G -jar paper-1.12.2.jar
